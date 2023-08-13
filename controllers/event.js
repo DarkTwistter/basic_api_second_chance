@@ -11,9 +11,17 @@ module.exports.get = async (req, res) => {
 module.exports.createEvent = async (req, res) => {
     const eventModel = new Event(req.body).getModel()
 
+    const categories = req.body.category
     await event.create(eventModel)
-        .then((result) => {
-            console.log(result);
+        .then(async (result) => {
+            const finalCategories = []
+            categories.map(value => {
+                finalCategories.push({
+                    event_id: result[0],
+                    category_id: value
+                })
+            })
+            await db('event_category').insert(finalCategories)
             return res.status(200).json({
                 message: 'successful added'
             })
@@ -60,7 +68,7 @@ module.exports.getById = async (req, res) => {
 module.exports.change = async (req, res) => {
     const modal = new Event(req.body)
     await event.change({'events.event_id': req.params.id}, modal)
-        .then((result) => {
+        .then(() => {
             return res.status(200).json({
                 message: 'successfully changed'
             })

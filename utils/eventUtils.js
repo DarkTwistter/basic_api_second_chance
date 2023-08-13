@@ -5,7 +5,7 @@ module.exports.get = async (condition = {}) => {
 }
 
 module.exports.create = async (model) => {
-    return db('events').insert(eventModel)
+    return db('events').insert(model)
 }
 
 module.exports.change = async (condition = {}, modal) => {

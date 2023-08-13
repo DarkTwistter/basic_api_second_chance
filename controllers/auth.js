@@ -29,6 +29,21 @@ module.exports.login = async (req, res) => {
     })
 }
 
+module.exports.getAllUsers = async (req, res) => {
+    const [isAdmin] = await db('users').where({'user_id': req.body.user_id})
+    console.log(isAdmin);
+    if (isAdmin.role === 'Администратор')
+        await db('users')
+            .then((result) => {
+                return res.status(200).json(result)
+            })
+    else
+        return res.status(403).json({
+            message: 'error'
+        })
+
+}
+
 module.exports.register = async (req, res) => {
     const userModal = new User(req.body).getModel()
 
@@ -45,29 +60,36 @@ module.exports.register = async (req, res) => {
 
 module.exports.createUser = async (req, res) => {
     const userModal = new User(req.body).getModel()
+    const [admin] = await db('users').where({'user_id': req.body.user_id})
 
-    await db('users').insert(userModal)
-        .then(() => {
-            return res.status(200).json({
-                message: 'user created'
+    if (admin.role === 'Администратор') {
+        await db('users').insert(userModal)
+            .then(() => {
+                return res.status(200).json({
+                    message: 'user created'
+                })
             })
-        })
-        .catch(e => {
-            return res.status(500).json(e.message)
-        })
+            .catch(e => {
+                return res.status(500).json(e.message)
+            })
+    } else return res.status(403).json({message: 'permission denied'})
 }
 
 module.exports.deleteUser = async (req, res) => {
-    const userId = req.params.id
+    const userId = req.body.user_id
+    const [admin] = await db('users').where({'user_id': userId})
+    console.log(admin);
 
-    await db('users').where({'user_id': userId}).delete()
-        .then(() => {
-            return res.status(200).json({
-                    message: 'deleted'
-                }
-            )
-        })
-        .catch(e => {
-            return res.status(500).json(e.message)
-        })
+    if (admin.role === 'Администратор') {
+        await db('users').where({'user_id': userId}).delete()
+            .then(() => {
+                return res.status(200).json({
+                        message: 'deleted'
+                    }
+                )
+            })
+            .catch(e => {
+                return res.status(500).json(e.message)
+            })
+    } else return res.status(403).json({message: 'permission denied'})
 }
