@@ -5,9 +5,7 @@ const event = require('../utils/eventUtils')
 module.exports.get = async (req, res) => {
     const events = await event.get()
 
-    return res.status(200).json({
-        base: events
-    })
+    return res.status(200).json(events)
 }
 
 module.exports.createEvent = async (req, res) => {

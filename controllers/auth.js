@@ -32,11 +32,40 @@ module.exports.login = async (req, res) => {
 module.exports.register = async (req, res) => {
     const userModal = new User(req.body).getModel()
 
-    db('users').insert(userModal)
+    await db('users').insert(userModal)
         .then(() => {
             return res.status(200).json({
                 message: 'user created'
             })
+        })
+        .catch(e => {
+            return res.status(500).json(e.message)
+        })
+}
+
+module.exports.createUser = async (req, res) => {
+    const userModal = new User(req.body).getModel()
+
+    await db('users').insert(userModal)
+        .then(() => {
+            return res.status(200).json({
+                message: 'user created'
+            })
+        })
+        .catch(e => {
+            return res.status(500).json(e.message)
+        })
+}
+
+module.exports.deleteUser = async (req, res) => {
+    const userId = req.params.id
+
+    await db('users').where({'user_id': userId}).delete()
+        .then(() => {
+            return res.status(200).json({
+                    message: 'deleted'
+                }
+            )
         })
         .catch(e => {
             return res.status(500).json(e.message)
