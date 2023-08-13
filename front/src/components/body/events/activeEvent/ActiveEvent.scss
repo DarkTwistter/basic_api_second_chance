@@ -1,0 +1,76 @@
+.active {
+    &__picture {
+        position: relative;
+
+        &__text {
+            position: absolute;
+            top: 40%;
+            left: 106px;
+
+            &__top {
+                &__name {
+                    color: #000;
+                    font-family: "Manrope";
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                }
+        
+                &__date {
+                    align-items: center;
+                    padding-left: 30px;
+                    background-image: url(../../../../imgs/clock.svg);
+                    background-repeat: no-repeat;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                }
+        
+                &__price {
+                    align-items: center;
+                    padding-left: 30px;
+                    background-image: url(../../../../imgs/price.svg);
+                    background-repeat: no-repeat;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                }
+        
+                &__place {
+                    align-items: center;
+                    padding-left: 30px;
+                    padding-bottom: 5px;
+                    background-image: url(../../../../imgs/marker.svg);
+                    background-repeat: no-repeat;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                }
+            }
+
+            &__bottom {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                button {
+                    width: 137px;
+                    height: 44px;
+                    border-radius: 12px;
+                    border: #3CBD8C;
+                    background: #3CBD8C;
+                    font-size: 15px;
+                    font-weight: 800;
+                    margin-right: 27px;
+                }
+            }
+        }
+
+
+    }
+
+    &__address {
+        margin-bottom: 20px;
+        &__map {
+            /* width: 800px; */
+        }
+    }
+}

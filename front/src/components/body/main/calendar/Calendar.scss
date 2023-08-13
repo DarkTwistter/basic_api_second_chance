@@ -1,0 +1,22 @@
+.calendar {
+    &__days {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+
+        &__day {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 0;
+                font-size: 13px;
+            }
+
+            p:first-child {
+                font-size: 24px;
+            }
+        }
+    }
+}

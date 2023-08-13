@@ -1,0 +1,34 @@
+.container {
+    padding: 0 140px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & .click {
+        border-radius: 20px;
+        background: #EB9E1F;
+        text-align: center;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #000;
+        font-family: Manrope;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        padding-right: 30px;
+        text-decoration: none;
+
+        &__yet {
+            padding: 0;
+        }
+    }
+}

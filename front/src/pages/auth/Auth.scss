@@ -1,0 +1,70 @@
+.auth {
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        position: relative;
+        max-width: 500px;
+        margin-top: 112px;
+        margin-left: 500px;
+        border-radius: 12px;
+        border: 1px solid #E0E0E0;
+
+        &__logo {
+            display: flex;
+            justify-content: start;
+            margin: 10px 40px;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                width: 407px;
+                height: 35px;
+                border-radius: 12px;
+                border: 1px solid #E0E0E0;
+                background: #FFF;
+                margin-bottom: 10px;
+                padding-left: 10px;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            button:first-child {
+                border-radius: 12px;
+                background: #3CBD8C;
+                border: #3CBD8C;
+            }
+
+            button {
+                width: 172px;
+                height: 38px;
+                border-radius: 12px;
+                border: #3CBD8C;
+                margin-bottom: 10px;
+                font-family: "Manrope";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 800;
+            }
+        }
+    }
+
+    &__mountains {
+        /* position: absolute; */
+        top:0;
+        left: 10;
+        z-index: -1;
+    }
+}

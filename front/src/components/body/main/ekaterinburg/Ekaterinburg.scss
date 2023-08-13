@@ -1,0 +1,13 @@
+.ekat {
+    &__pictures {
+        display: flex;
+        justify-content: space-between;
+        img:first-child {
+            width: 800px;
+        }
+
+        img:last-child {
+            width: 320px;
+        }
+    }
+}

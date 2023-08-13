@@ -1,0 +1,19 @@
+.filters {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter {
+    margin-right: 20px;
+    select {
+        height: 32px;
+        font-size: 15px;
+        padding: 0 5px;
+        padding-right: 20px;
+        color: var(--day-text-icons-text-02, rgba(27, 31, 59, 0.65));
+        border-radius: 12px;
+        border: 1px solid var(--day-base-base-04, #E0E0E0);
+        background: var(--night-text-text-01, #FFF);
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
+    }
+}

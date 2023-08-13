@@ -1,0 +1,59 @@
+.event {
+    width: 360px;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-right: 45px;
+    position: relative;
+    text-decoration: none;
+    color: #000;
+
+    &__top {
+        &__heart {
+            position: absolute;
+            right: 15px;
+            top: 12px
+        }
+
+    }
+
+    &__bottom {
+        padding: 12px;
+        &__name {
+            color: #000;
+            font-family: "Manrope";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+
+        &__date {
+            align-items: center;
+            padding-left: 30px;
+            background-image: url(../../../../imgs/clock.svg);
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        &__price {
+            align-items: center;
+            padding-left: 30px;
+            background-image: url(../../../../imgs/price.svg);
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        &__place {
+            align-items: center;
+            padding-left: 30px;
+            padding-bottom: 5px;
+            background-image: url(../../../../imgs/marker.svg);
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    }
+}

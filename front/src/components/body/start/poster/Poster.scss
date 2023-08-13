@@ -1,0 +1,40 @@
+.poster {
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+    height: 562px;
+    width: 1920px;
+    margin-left: 10px;
+    background: url(../../../../imgs/poster.png);
+    position: relative;
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 45%;
+        left: 215px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: auto;
+            padding: 0 10px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+            margin-right: 16px;
+            color: #000;
+            font-family: "Manrope";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 24px;
+            /* 160% */
+            text-decoration: none;
+        }
+    }
+}

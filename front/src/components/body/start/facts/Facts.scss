@@ -1,0 +1,36 @@
+.facts {
+    &__pictures {
+        display: flex;
+        flex-direction: row;
+
+
+        &__item {
+            position: relative;
+            margin-right: 41px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            p {
+                margin-top: auto;
+                position: absolute;
+                top: 75%;
+                left: 30%;
+                border-radius: 30px;
+                background: #3CBD8C;
+                height: 46px;
+                color: #FFF;
+                font-family: "Manrope";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 20px;
+                padding: 0 15px;
+                text-align: center;
+                
+                /* 83.333% */
+            }
+
+        }
+    }
+}
