@@ -1,5 +1,5 @@
 ## Back - директория с backend 
-## Front - директория с backend 
+## Front - директория с frontend 
 
 ### Ссылка на postman со всей api: https://www.postman.com/solar-escape-86743/workspace/balagan
 
